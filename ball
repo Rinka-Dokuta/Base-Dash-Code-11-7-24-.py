@@ -1,0 +1,20 @@
+import pygame
+import random
+
+RED = (255, 0, 0)
+
+class Ball:
+    def __init__(self):
+        self.width = 30 
+        self.height = 30
+        self.x = 800 #start at the right side of the screen
+        self.y = random.randint(10, 550) #random y postion
+        self.speed = random.uniform(3 , 4) #random balls speed
+       
+             
+    def update(self):
+        self.x -= self.speed #move balls to the left
+        
+    def draw(self, screen):
+        pygame.draw.circle(screen, RED, (self.x, self.y, self.width, self.height))
+                   
